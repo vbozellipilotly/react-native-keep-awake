@@ -10,7 +10,7 @@ As the first step, install this module:
 
 ## Usage
 
-#### example: react hooks
+#### example: hooks
 
 ```jsx
 import { useKeepAwake } from '@sayem314/react-native-keep-awake';
@@ -28,7 +28,24 @@ export default function KeepAwakeExample {
 }
 ```
 
-#### example: static functions
+#### example: components
+
+```jsx
+import KeepAwake from '@sayem314/react-native-keep-awake';
+import React from 'react';
+import { Text, View } from 'react-native';
+
+export default function KeepAwakeExample {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <KeepAwake />
+      <Text>This screen will never sleep!</Text>
+    </View>
+  );
+}
+```
+
+#### example: functions
 
 ```jsc
 import { activateKeepAwake, deactivateKeepAwake } from '@sayem314/react-native-keep-awake';

@@ -1,32 +1,26 @@
-// @flow
+import React, { useEffect } from "react";
+import { NativeModules } from "react-native";
 
-import React, { Component } from 'react';
-import { NativeModules } from 'react-native';
-
-let mounted = 0;
-
-export default class KeepAwake extends Component<{}> {
-  static activate() {
+export function useKeepAwake() {
+  useEffect(() => {
     NativeModules.KCKeepAwake.activate();
-  }
+    return () => NativeModules.KCKeepAwake.deactivate();
+  }, []);
+}
 
-  static deactivate() {
-    NativeModules.KCKeepAwake.deactivate();
-  }
+export function activateKeepAwake() {
+  NativeModules.KCKeepAwake.activate();
+}
 
-  componentDidMount() {
-    mounted++;
-    KeepAwake.activate();
-  }
+export function deactivateKeepAwake() {
+  NativeModules.KCKeepAwake.deactivate();
+}
 
-  componentWillUnmount() {
-    mounted--;
-    if (!mounted) {
-      KeepAwake.deactivate();
-    }
-  }
+export default function KeepAwake() {
+  useEffect(() => {
+    NativeModules.KCKeepAwake.activate();
+    return () => NativeModules.KCKeepAwake.deactivate();
+  }, []);
 
-  render() {
-    return null;
-  }
+  return null;
 }
