@@ -1,7 +1,7 @@
 // Adapted from
 // https://github.com/gijoehosaphat/react-native-keep-screen-on
 
-package com.corbt.keepawake;
+package com.sayem.keepawake;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
