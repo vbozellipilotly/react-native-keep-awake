@@ -12,7 +12,7 @@ As the first step, install this module:
 
 #### example: hooks
 
-```jsx
+```js
 import { useKeepAwake } from '@sayem314/react-native-keep-awake';
 import React from 'react';
 import { Text, View } from 'react-native';
@@ -30,7 +30,7 @@ export default function KeepAwakeExample {
 
 #### example: components
 
-```jsx
+```js
 import KeepAwake from '@sayem314/react-native-keep-awake';
 import React from 'react';
 import { Text, View } from 'react-native';
@@ -47,15 +47,15 @@ export default function KeepAwakeExample {
 
 #### example: functions
 
-```jsc
-import { activateKeepAwake, deactivateKeepAwake } from '@sayem314/react-native-keep-awake';
-import React from 'react';
-import { Button, View } from 'react-native';
+```js
+import { activateKeepAwake, deactivateKeepAwake} from "@sayem314/react-native-keep-awake";
+import React from "react";
+import { Button, View } from "react-native";
 
 export default class KeepAwakeExample extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Button onPress={this._activate}>Activate</Button>
         <Button onPress={this._deactivate}>Deactivate</Button>
       </View>
@@ -64,10 +64,10 @@ export default class KeepAwakeExample extends React.Component {
 
   _activate = () => {
     activateKeepAwake();
-    };
+  };
 
   _deactivate = () => {
     deactivateKeepAwake();
-    };
+  };
 }
 ```
